@@ -1,0 +1,17 @@
+<nav class="nav">
+  <ul>
+    <li class="nav-item">DZ</li>
+    <li
+      class="nav-item"
+      [routerLinkActive]="['active']"
+      [routerLink]="item.path"
+      [title]="item.label"
+      *ngFor="let item of sideNavItem"
+    >
+      <span class="material-icons">
+        {{ item.icon }}
+      </span>
+      {{ item.label }}
+    </li>
+  </ul>
+</nav>

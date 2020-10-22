@@ -1,0 +1,47 @@
+<h2 mat-dialog-title>
+  {{ taskForm.get("id")?.value ? "Update Task" : "Add Task" }}
+</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="taskForm">
+    <mat-form-field class="full-width">
+      <mat-label>Message</mat-label>
+      <textarea
+        matInput
+        placeholder="Write here"
+        formControlName="message"
+      ></textarea>
+    </mat-form-field>
+    <div class="example-container">
+      <mat-form-field>
+        <mat-label>Due date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="due_date" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Priority</mat-label>
+        <mat-select formControlName="priority">
+          <mat-option *ngFor="let item of priority" [value]="item.value">
+            {{ item.label }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Assigned to</mat-label>
+        <mat-select formControlName="assigned_to">
+          <mat-option *ngFor="let user of userList" [value]="user.id">
+            {{ user.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button class="btn primary" mat-dialog-close>Cancel</button>
+  &nbsp;&nbsp;&nbsp;
+  <button class="btn primary" [disabled]="taskForm.invalid" (click)="save()" cdkFocusInitial>
+    {{ taskForm.get("id")?.value ? "Update" : "Save" }}
+  </button>
+</mat-dialog-actions>

@@ -1,0 +1,34 @@
+.nav {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      list-style: none;
+      padding: 16px;
+      cursor: pointer;
+      outline: none;
+      display: flex;
+      align-items: center;
+      height: 60px;
+      &:first-child{
+        background: #a8aed9;
+        text-align: center;
+        color: #fff;
+        justify-content: center;
+        font-size: 18px;
+      }
+      &:not(:first-child):hover {
+        background: #3470e4;
+        color: white;
+      }
+      &.active {
+        background: #3470e4;
+        color: white;
+      }
+      .material-icons{
+        margin-right: 8px;
+      }
+    }
+  }
+}

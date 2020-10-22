@@ -1,0 +1,17 @@
+<div class="user-main-wrapper">
+  <div class="title-wrapper d-flex justify-space-between">
+    <div class="title">User</div>
+  </div>
+  <div class="user-list">
+    <div class="card" *ngFor="let user of userList">
+      <div class="d-flex align-items-center">
+        <div class="img-avtar">
+          <img [src]="user.picture" class="img" [alt]="user.name" />
+        </div>
+        <div class="user-details">
+          {{ user.name }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

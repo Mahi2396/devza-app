@@ -1,0 +1,14 @@
+.main-wrapper {
+  display: flex;
+  height: 100%;
+  .left {
+    width: 200px;
+    box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.04);
+    background: #fff;
+    position: relative;
+    z-index: 10;
+  }
+  .right {
+    width: calc(100% - 200px);
+  }
+}

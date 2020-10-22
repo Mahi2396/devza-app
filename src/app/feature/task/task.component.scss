@@ -1,0 +1,16 @@
+.task-list {
+  margin: 16px;
+  height: calc(100vh - 240px);
+  .search-filter{
+    padding: 10px;
+    background: #fff;
+    margin-bottom: 16px;
+    .mat-form-field{
+      width: 400px;
+    }
+  }
+  .table-container {
+    height: 100%;
+    overflow: auto;
+  }
+}
